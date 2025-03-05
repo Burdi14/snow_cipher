@@ -1,6 +1,10 @@
-## This is the task about 1.0 version of SNOW encrypting algorithm.
+# Snowfall  | medium | CRYPTO
 
-### Solution
+## Описание
+
+Все просто. Необходимо расшифровать флаг. Флаг шифруется на сервере.
+
+## Solution
 The key mistake in the algorithm is that the LFSR and FSM were not initialized separately. As a result, by the second cycle of the algorithm, we can recover both the LFSR and FSM by brute-forcing only key[0]. This means that initializing FSM_R2 in this implementation of the algorithm was actually unnecessary.
 
   ```cpp
